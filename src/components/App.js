@@ -20,10 +20,12 @@ class App extends React.Component {
   }
 
   addItem = () => {
-    this.setState({
-      itemsList: [...this.state.itemsList, this.state.value],
-      value: ''
-    })
+    if (this.state.value) {
+      this.setState({
+        itemsList: [...this.state.itemsList, this.state.value],
+        value: ''
+      })
+    }
   }
 
   removeItem = item => {
