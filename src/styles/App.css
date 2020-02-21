@@ -1,0 +1,105 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  font-size: calc(10px + 2vmin);
+  color: #fff;
+}
+
+.logo {
+  height: 20vmin;
+  pointer-events: none;
+}
+
+.inputText {
+  padding: 1vh;
+  border-radius: 5px;
+  border-color: #61DAFB;
+}
+
+/* Items List */
+.itemsList {
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  color: #fff;
+  margin-top: 2vh;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item__checkbox {
+  margin-top: 5px;
+}
+
+.item__label {
+  cursor: pointer;
+  font-size: 4vh;
+}
+
+.item__label--checked {
+  text-decoration: line-through;
+  opacity: .6;
+}
+
+/* Buttons */
+.btn {
+  color: #fff;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 1vh;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: .8;
+}
+
+.inputBtn {
+  margin-left: 2vh;
+  padding: 1vh 2vh;
+  border-color: #61DAFB;
+  background-color: #61DAFB;
+  color: #282c34;
+}
+
+.clearBtn {
+  margin-top: 5vh;
+  border-color: #5DD39E;
+  background-color: #5DD39E;
+  color: #282c34;
+}
+
+.removeBtn {
+  border-radius: 10px;
+  background-color: red;
+  border-color: red;
+  padding: 0 0.5vh;
+  line-height: 3vh;
+}
+
+/* Footer */
+.footer {
+  margin-top: 5vh;
+}
+
+.socialLink {
+  margin-right: 10px;
+}
+
+.socialLink:hover {
+  opacity: .8;
+}
+
+.socialIcon {
+  height: 5vmin;
+}
