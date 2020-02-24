@@ -11,7 +11,9 @@ class App extends React.Component {
     super(props)
     this.state = {
       value: '',
-      itemsList: []
+      itemsList: localStorage.getItem('tasks')
+        ? JSON.parse(localStorage.getItem('tasks')).list
+        : []
     }
   }
 
@@ -21,6 +23,18 @@ class App extends React.Component {
 
   addItem = () => {
     if (this.state.value) {
+      if (localStorage.getItem('tasks')) {
+        const taskList = JSON.parse(localStorage.getItem('tasks')).list
+        taskList.push(this.state.value)
+        localStorage.setItem('tasks', JSON.stringify({ list: taskList }))
+      } else {
+        const taskList = {
+          list: []
+        }
+        taskList.list.push(this.state.value)
+        localStorage.setItem('tasks', JSON.stringify(taskList))
+      }
+
       this.setState({
         itemsList: [...this.state.itemsList, this.state.value],
         value: ''
@@ -29,6 +43,11 @@ class App extends React.Component {
   }
 
   removeItem = item => {
+    const taskList = JSON.parse(localStorage.getItem('tasks')).list
+    localStorage.setItem(
+      'tasks',
+      JSON.stringify({ list: taskList.filter(el => el !== item) })
+    )
     this.setState({
       itemsList: this.state.itemsList.filter(el => el !== item)
     })
@@ -36,6 +55,7 @@ class App extends React.Component {
 
   clearList = () => {
     this.setState({ itemsList: [] })
+    localStorage.clear()
   }
 
   render() {

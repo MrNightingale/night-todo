@@ -56,8 +56,9 @@
   color: #fff;
   border: 1px solid;
   border-radius: 5px;
-  padding: 1vh;
+  padding: 2vh;
   cursor: pointer;
+  font-size: calc(10px + 1.2vmin);
 }
 
 .btn:hover {
@@ -66,7 +67,7 @@
 
 .inputBtn {
   margin-left: 2vh;
-  padding: 1vh 2vh;
+  padding: 1vh 3vh;
   border-color: #61DAFB;
   background-color: #61DAFB;
   color: #282c34;
